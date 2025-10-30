@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_format.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 19:22:38 by cagil             #+#    #+#             */
-/*   Updated: 2025/10/29 20:19:59 by cagil            ###   ########.fr       */
+/*   Created: 2025/10/27 19:12:18 by cagil             #+#    #+#             */
+/*   Updated: 2025/10/30 20:52:00 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include <stdio.h>
+#include <unistd.h>
 #include "ft_printf.h"
 
-int	ft_get_format(char format, va_list varg)
+int	main(void)
 {
-	if (format == 'c')
-	{
-		ft_putchar(va_arg(varg, int));
-		return (1);
-	}
-	if (format == 's')
-		return (ft_putstr(va_arg(varg, char *)));
-	if (format == 'd' || format == 'i')
-	{
-		//Falta saber la logitud del numero
-		ft_putnbr(va_arg(varg, int));
-		return (1);
-	}
-	return (0);
+	// "Hola %c funciona %s, - %d", 'a', "bien" , -42.42)
+	int result;
+
+	result = 0;
+	result = printf("%u", -2147483647);
+	printf("\nreturn printf: %d\n", result);
+
+	result = ft_printf("%u", -2147483647);
+	printf("\nreturn ft_printf: %d\n", result);
+
+	return 0;
 }

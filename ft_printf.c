@@ -6,19 +6,16 @@
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:01:26 by cagil             #+#    #+#             */
-/*   Updated: 2025/10/29 20:18:06 by cagil            ###   ########.fr       */
+/*   Updated: 2025/10/30 18:25:17 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
 #include "ft_printf.h"
 
-int	ft_printf(char const *format, ...)
+/*int	ft_printf(char const *format, ...)
 {
-	int	i;
-	int c_count;
+	int		i;
+	int		c_count;
 	va_list vargs; //Lista de todos los parametros dinamicos
 
 	i = 0;
@@ -40,4 +37,19 @@ int	ft_printf(char const *format, ...)
 	}
 	va_end(vargs);
 	return (c_count);
+}
+*/
+
+int	ft_printf(char const *fmt, ...)
+{
+	int		i;
+	int		count;
+	va_list	vargs;
+
+	i = 0;
+	count = 0;
+	va_start(vargs, fmt);
+	count += ft_varprintf(fmt, i, count, vargs);
+	va_end(vargs);
+	return (count);
 }

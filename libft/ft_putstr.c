@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 18:02:12 by cagil             #+#    #+#             */
-/*   Updated: 2025/10/30 18:23:14 by cagil            ###   ########.fr       */
+/*   Created: 2025/10/30 18:07:47 by cagil             #+#    #+#             */
+/*   Updated: 2025/10/30 18:08:49 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "libft/libft.h"
+int	ft_putstr(char *s)
+{
+	int	i;
 
-int	ft_printf(char const *fmt, ...);
-
-#endif
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+	return (i);
+}
