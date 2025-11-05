@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_printf_src.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 18:08:22 by cagil             #+#    #+#             */
-/*   Updated: 2025/10/30 19:57:19 by cagil            ###   ########.fr       */
+/*   Created: 2025/10/30 18:04:37 by cagil             #+#    #+#             */
+/*   Updated: 2025/11/05 19:48:06 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_SRC_H
+# define FT_PRINTF_SRC_H
 
-int	ft_putnbr(int n)
-{
-	long	nbr;
-	char	c;
-	int		count;
+# include <unistd.h>
+# include <stdarg.h>
 
-	count = 0;
-	nbr = n;
-	if (nbr < 0)
-	{
-		count = 1;
-		nbr *= -1;
-		write(1, "-", 1);
-	}
-	if (nbr >= 10)
-		count += ft_putnbr(nbr / 10);
-	c = (nbr % 10) + '0';
-	count += write (1, &c, 1);
-	return (count);
-}
+int	ft_varprintf(const char *fmt, int i, int count, va_list vargs);
+
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int i);
+int	ft_putptr(unsigned long ptr);
+int	ft_putnbr_lowhex(unsigned int nbr);
+int	ft_putnbr_upphex(unsigned int nbr);
+int	ft_putsnbr(unsigned int nbr);
+
+#endif

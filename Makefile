@@ -6,7 +6,7 @@
 #    By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/29 18:56:59 by cagil             #+#    #+#              #
-#    Updated: 2025/10/30 20:51:17 by cagil            ###   ########.fr        #
+#    Updated: 2025/11/05 19:43:55 by cagil            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,14 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
 SRC		= ft_printf.c \
-		libft/ft_varprintf.c \
-		libft/ft_putchar.c \
-		libft/ft_putstr.c \
-		libft/ft_putnbr.c \
-		libft/ft_putptr.c \
-		libft/ft_putnbr_lowhex.c \
-		libft/ft_putnbr_upphex.c \
-		libft/ft_putsnbr.c
+		ft_printf_src/ft_varprintf.c \
+		ft_printf_src/ft_putchar.c \
+		ft_printf_src/ft_putstr.c \
+		ft_printf_src/ft_putnbr.c \
+		ft_printf_src/ft_putptr.c \
+		ft_printf_src/ft_putnbr_lowhex.c \
+		ft_printf_src/ft_putnbr_upphex.c \
+		ft_printf_src/ft_putsnbr.c
 
 OBJ 	= $(SRC:.c=.o)
 

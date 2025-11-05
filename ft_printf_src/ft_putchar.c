@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putsnbr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 18:08:22 by cagil             #+#    #+#             */
-/*   Updated: 2025/10/30 20:48:34 by cagil            ###   ########.fr       */
+/*   Created: 2025/10/30 18:04:06 by cagil             #+#    #+#             */
+/*   Updated: 2025/11/05 19:48:08 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_src.h"
 
-int	ft_putsnbr(unsigned int nbr)
+int	ft_putchar(char c)
 {
-	char	c;
-	int		count;
-
-	count = 0;
-	if (nbr >= 10)
-		count += ft_putnbr(nbr / 10);
-	c = (nbr % 10) + '0';
-	count += write (1, &c, 1);
-	return (count);
+	return (write (1, &c, 1));
 }

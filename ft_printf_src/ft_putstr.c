@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_lowhex.c                                 :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 19:18:57 by cagil             #+#    #+#             */
-/*   Updated: 2025/11/05 19:09:37 by cagil            ###   ########.fr       */
+/*   Created: 2025/10/30 18:07:47 by cagil             #+#    #+#             */
+/*   Updated: 2025/11/05 19:48:29 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_src.h"
 
-int	ft_putnbr_lowhex(unsigned int nbr)
+int	ft_putstr(char *s)
 {
-	int		count;
-	char	*base;
+	int	i;
 
-	base = "0123456789abcdef";
-	count = 0;
-	if (nbr >= 16)
-		count += ft_putnbr_lowhex(nbr / 16);
-	count += write(1, &base[nbr % 16], 1);
-	return (count);
+	if (!s)
+		return (ft_putstr("(null)"));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+	return (i);
 }
