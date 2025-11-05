@@ -6,7 +6,7 @@
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 18:07:47 by cagil             #+#    #+#             */
-/*   Updated: 2025/10/30 18:08:49 by cagil            ###   ########.fr       */
+/*   Updated: 2025/11/05 18:26:58 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putstr(char *s)
 	int	i;
 
 	if (!s)
-		return (0);
+		return (ft_putstr("(null)"));
 	i = 0;
 	while (s[i] != '\0')
 	{
