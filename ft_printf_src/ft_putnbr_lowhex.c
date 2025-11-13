@@ -6,13 +6,13 @@
 /*   By: cagil <cagil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 19:18:57 by cagil             #+#    #+#             */
-/*   Updated: 2025/11/05 19:48:17 by cagil            ###   ########.fr       */
+/*   Updated: 2025/11/13 23:16:19 by cagil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_src.h"
 
-int	ft_putnbr_lowhex(unsigned int nbr)
+int	ft_putnbr_lowhex(unsigned long nbr)
 {
 	int		count;
 	char	*base;
